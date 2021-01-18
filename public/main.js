@@ -1,23 +1,30 @@
 (() => {
   const form = document.querySelector('form');
-  const unixBox = document.getElementById('unix');
-  const utcBox = document.getElementById('utc');
-  const inputTime = document.getElementById('inputTime');
+  const responseBox = document.getElementById('responseBox');
+  const userInput = document.getElementById('userInput');
+
+  function render(data) {
+    if (data.error) {
+      return `<p>Error: ${data.error}</p>`;
+    }
+    return `<p>Unix: ${data.unix}</p><p>utc: ${data.utc}</p>`;
+  }
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     const url = window.location.href;
 
-    console.log(inputTime.value);
-    // console.log(form.value);
+    const query = userInput.value;
 
-    fetch(url + 'api/timestamp')
+    fetch(url + `api/timestamp/${query}`)
       .then((res) => res.json())
       .then((data) => {
-        const { unix, utc } = { ...data };
-
-        unixBox.textContent = `Unix: ${unix}`;
-        utcBox.textContent = `utc: ${utc}`;
+        responseBox.innerHTML = render(data);
       });
+
+    form.reset();
   });
 })();
+
+// design inspiration
+// https://uidesigndaily.com/posts/sketch-modal-pop-up-day-1227

@@ -17,42 +17,29 @@
   </head>
 
   <body>
-    <h1>Timestamp Microservice</h1>
-    <hr />
     <div class="container">
-      <h3>Example Usage:</h3>
-      <ul>
-        <li>
-          <a href="api/timestamp/2015-12-25"
-            >[project url]/api/timestamp/2015-12-25</a
-          >
-        </li>
-        <li>
-          <a href="api/timestamp/1451001600000"
-            >[project url]/api/timestamp/1451001600000</a
-          >
-        </li>
-      </ul>
-
-      <h3>Example Output:</h3>
-      <p>
-        <code
-          >{"unix":1451001600000, "utc":"Fri, 25 Dec 2015 00:00:00 GMT"}</code
-        >
-      </p>
-    </div>
-    <div class="footer">
-      <p>By <a href="https://www.freecodecamp.org/">freeCodeCamp.org</a></p>
-    </div>
-    <form>
-      <label for="inputTime">Enter a time(date and time):</label>
-      <input type="datetime-local" id="inputTime" name="inputTime" />
-      <input type="text" name="userInput" />
-      <button>Get timestamp</button>
-    </form>
-    <div>
-      <p id="unix">Unix:</p>
-      <p id="utc">utc:</p>
+      <h1>Timestamp Microservice</h1>
+      <hr />
+      <form>
+        <label for="inputTime">Enter a date or timestamp:</label>
+        <div>
+          <input
+            type="text"
+            id="userInput"
+            name="userInput"
+            placeholder="eg:yyyy-mm-ddT00:00 or 1451001600000"
+          />
+          <button>Get timestamp</button>
+        </div>
+      </form>
+      <div id="responseBox"></div>
+      <div class="footer">
+        <p>
+          A <a href="https://www.freecodecamp.org/">freeCodeCamp.org</a> project
+          by
+          <a href="https://github.com/fccJashCoda">JashCoda</a>
+        </p>
+      </div>
     </div>
     <script src="main.js"></script>
   </body>
