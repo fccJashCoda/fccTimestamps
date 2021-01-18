@@ -2,6 +2,7 @@
 :root {
   --main-bg-color: #1f2855;
   --secondary-bg-color: #283265;
+  --hightlight: orange;
 }
 
 body,
@@ -28,7 +29,6 @@ body {
 .container {
   width: 28em;
   padding: 1em;
-  margin-top: 40px;
   background: var(--secondary-bg-color);
   border-radius: 5px;
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
@@ -75,21 +75,20 @@ code {
   padding: 0;
 }
 
-form {
-}
-
-form div {
+.input-container {
   display: flex;
 }
+
 #userInput {
   width: 70%;
   padding: 0.5em;
   height: 2.5em;
 }
-form button {
+
+.btn {
   cursor: pointer;
   border: none;
-  background: orange;
+  background: var(--hightlight);
   width: 30%;
   height: 2.5em;
   font-weight: bold;
@@ -97,5 +96,5 @@ form button {
 
 a {
   /* color: #2574a9; */
-  color: orange;
+  color: var(--hightlight);
 }

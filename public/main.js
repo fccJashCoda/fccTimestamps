@@ -25,6 +25,3 @@
     form.reset();
   });
 })();
-
-// design inspiration
-// https://uidesigndaily.com/posts/sketch-modal-pop-up-day-1227
