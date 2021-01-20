@@ -20,6 +20,10 @@
       .then((res) => res.json())
       .then((data) => {
         responseBox.innerHTML = render(data);
+      })
+      .catch((err) => {
+        const data = { error: 'Unable to reach the API server.' };
+        responseBox.innerHTML = render(data);
       });
 
     form.reset();
